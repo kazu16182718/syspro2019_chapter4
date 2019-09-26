@@ -10,6 +10,11 @@ bottom = 2.5
 middle = 7.2
 top = 12.0
 
+def setservo(dig):
+    angle = (top - bottom) * (90 + dig) / 180 + bottom
+    servo.ChangeDutyCycle(angle)
+    time.sleep(1.0)
+
 for i in range(5):
 	servo.ChangeDutyCycle(bottom)
 	time.sleep(1.0)
@@ -20,6 +25,8 @@ for i in range(5):
 	servo.ChangeDutyCycle(top)
 	time.sleep(1.0)
 
+        setservo(input("please input dig --> "))
 
 
+	
 
